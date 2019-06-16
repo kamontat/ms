@@ -19,3 +19,13 @@
 # true  = Repeat key
 # false = Special character
 export _MS_KB_PRESS_HOLD=true
+
+# keyboard repeat rate
+# 120 = very slow repeating key
+# 2 = very fast repeated
+export _MS_KB_REPEAT_RATE=10
+
+# Set a time Delay until key repeat
+# 120 = very delay
+# 15 = short delay (mean very fast)
+export _MS_KB_DELAY_REPEAT=20
