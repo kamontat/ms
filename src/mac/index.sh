@@ -35,6 +35,7 @@ __ms__load_setting() {
 }
 
 __ms__load_mac_settings() {
+  __ms__load_setting "power_management" || throw "cannot load power management config"
   __ms__load_setting "keyboard" || throw "cannot load keyboard config"
   __ms__load_setting "mouse" || throw "cannot load mouse config"
   __ms__load_setting "trackpad" || throw "cannot load trackpad config"
