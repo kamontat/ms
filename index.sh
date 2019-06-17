@@ -134,7 +134,7 @@ load_option() {
 export PRODUCTION=false
 
 # ###################### #
-# Variable section       #
+# Loader section         #
 # ###################### #
 
 load_option "$@"
@@ -153,6 +153,9 @@ load_option "$@"
 # ###################### #
 # Execution section      #
 # ###################### #
+
+sudo -K                               # remove previous sudo timestamp
+echo "$_MS_CER_PASSWORD" | sudo -v -S # create a new one for 15 minutes
 
 [ -f "${__MS_LIB}/logger.sh" ] && source "${__MS_LIB}/logger.sh" || throw "logger not found" 9
 
