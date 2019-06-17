@@ -27,7 +27,7 @@ export __MS_CONSTANT_MAC="${__MS_ROOT}/constants/mac"
 export __MS_SRC="${__MS_ROOT}/src"
 export __MS_SRC_MAC="${__MS_SRC}/mac"
 
-export __MSTMP_ROOT="/tmp/ms"
+export __MSTMP_ROOT="${__MS_ROOT}/tmp/ms"
 mkdir -p "$__MSTMP_ROOT" 2>/dev/null
 
 export __MSTMP_FILE_A="${__MSTMP_ROOT}/$(__ms_timestamp "mstmp").txt"
