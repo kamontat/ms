@@ -1,0 +1,4 @@
+**/certificate.sh
+
+tmp
+!tmp/**/.gitkeep
