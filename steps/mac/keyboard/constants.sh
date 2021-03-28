@@ -23,9 +23,9 @@ export __MS_SETTINGS__KB_REPEAT_ENABLED=true
 ## keyboard repeat rate
 ## 120 = very slow repeating key
 ## 2 = very fast repeated
-export __MS_SETTINGS__KB_REPEAT_RATE=10
+export __MS_SETTINGS__KB_REPEAT_RATE=4
 
 ## Set a time Delay until key repeat
 ## 120 = very delay
 ## 15 = short delay (mean very fast)
-export __MS_SETTINGS__KB_REPEAT_DELAY=20
+export __MS_SETTINGS__KB_REPEAT_DELAY=15
