@@ -21,11 +21,9 @@ export MODULE_REQUIREMENT=("mac")
 export __MS_SETTINGS__KB_REPEAT_ENABLED=true
 
 ## keyboard repeat rate
-## 120 = very slow repeating key
-## 2 = very fast repeated
-export __MS_SETTINGS__KB_REPEAT_RATE=4
+## [1] = 15ms
+export __MS_SETTINGS__KB_REPEAT_RATE=3
 
 ## Set a time Delay until key repeat
-## 120 = very delay
-## 15 = short delay (mean very fast)
-export __MS_SETTINGS__KB_REPEAT_DELAY=15
+## [1] = 15ms
+export __MS_SETTINGS__KB_REPEAT_DELAY=10
