@@ -1,0 +1,58 @@
+tap "git-chglog/git-chglog"
+tap "github/gh"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+brew "coreutils"
+brew "openssl@1.1"
+brew "asdf"
+brew "bash"
+brew "cloc"
+brew "gh"
+brew "git"
+brew "git-extras"
+brew "git-lfs"
+brew "go"
+brew "gradle"
+brew "graphviz"
+brew "helm"
+brew "hub"
+brew "jq"
+brew "libksba"
+brew "mas"
+brew "neovim"
+brew "node"
+brew "sbt"
+brew "shellcheck"
+brew "thefuck"
+brew "tree"
+brew "uni2ascii"
+brew "yarn"
+brew "zlib"
+brew "zsh"
+brew "git-chglog/git-chglog/git-chglog"
+cask "1password"
+cask "1password-cli"
+cask "docker"
+cask "dotnet-sdk"
+cask "flutter"
+cask "gpg-suite"
+cask "jetbrains-toolbox"
+cask "microsoft-edge"
+cask "powershell"
+cask "iterm2"
+cask "visual-studio-code"
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Affinity Publisher", id: 881418622
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Microsoft Word", id: 462054704
+mas "OneDrive", id: 823766827
+mas "Meb Mobile E-Books", id: 953922892
+mas "Money Pro", id: 972572731
+mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
+mas "Xcode", id: 497799835

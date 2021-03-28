@@ -1,2 +1,6 @@
-**/certificate.sh
 tmp
+!tmp/.gitkeep
+
+.env
+
+.DS_Store
