@@ -8,16 +8,16 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
+export _MS_DRYRUN=true
+
 export _MS_STEPS=(
   # "template/default"
-  # "mac/brew"
-  # "mac/power"
-  # "mac/keyboard"
-  # "mac/trackpad"
+  "mac/brew"
+  "mac/power"
+  "mac/keyboard"
+  "mac/trackpad"
   "app/intellij"
 )
-
-export _MS_DRYRUN=true
 
 # true  = output will colorize everythings
 # false = never color anything
@@ -25,9 +25,9 @@ export _MS_COLOR=true
 
 # true  = log to file
 # false = log to console
-export _MS_LOGGER_FILE=false
+export _MS_LOGGER_FILE=true
 
-export _MS_LOGGER_LEVEL=("debug" "info" "warn" "error")
+export _MS_LOGGER_LEVEL=("debug" "info" "warn" "error") # "debug" "info" "warn" "error"
 
 export __MS_COLOR_HIGHLIGHT="\e[36m"
 export __MS_COLOR_DEBUG=""
