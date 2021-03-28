@@ -24,4 +24,4 @@ export MODULE_REQUIREMENT=("network" "mac")
 # export __MS_SETTINGS__BREW_MAS_ENABLED=true
 
 ## filename on assets for load bundle, empty string will be ignored
-# export __MS_SETTINGS_BREW_BREWFILE="Brewfile"
+# export __MS_SETTINGS__BREW_BREWFILE="Brewfile"
