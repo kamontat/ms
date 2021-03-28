@@ -30,4 +30,4 @@ export __MSLOG_OUTPUT="${__MS_TMP}/ms-output.log"
 # --------------------------------- #
 
 cd "$__ms_old_location" || exit 1
-unset "$__ms_old_location"
+unset __ms_old_location
