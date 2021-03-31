@@ -22,15 +22,15 @@ __ms_setup_log() {
 #           3 - title string
 #           4 - message string
 #           5 - title color name
-# @warning    - title shouldn't more than 15 character
+# @warning    - title shouldn't more than 18 character
 __ms__log_format() {
   if [[ "$_MS_COLOR" == true ]] && [[ "$_MS_LOGGER_FILE" != true ]]; then
-    printf "[${2}%-5s${__MS_COLOR_RESET}]: ${5}%-19s${__MS_COLOR_RESET} %s${__MS_COLOR_RESET}\n" "$1" "$3" "$4"
+    printf "[${2}%-5s${__MS_COLOR_RESET}]: ${5}%-23s${__MS_COLOR_RESET} %s${__MS_COLOR_RESET}\n" "$1" "$3" "$4"
   else
     if [[ "$_MS_LOGGER_FILE" == "true" ]]; then
-      printf "[%-5s]: %-14s %s\n" "$1" "$3" "$4" >>"$__MSLOG_OUTPUT"
+      printf "[%-5s]: %-18s %s\n" "$1" "$3" "$4" >>"$__MSLOG_OUTPUT"
     else
-      printf "[%-5s]: %-14s %s\n" "$1" "$3" "$4"
+      printf "[%-5s]: %-18s %s\n" "$1" "$3" "$4"
     fi
   fi
 }
