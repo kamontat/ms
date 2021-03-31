@@ -24,13 +24,19 @@ __ms_setup_log() {
 #           5 - title color name
 # @warning    - title shouldn't more than 18 character
 __ms__log_format() {
+  local level="$1" level_color="$2" title="$3" message="$4" message_color="$5"
+  if [[ "${_MS_LOGGER_IGNORED_NAMESPACES[*]}" =~ $title ]]; then
+    return # ignore settings namespaces
+  fi
+
   if [[ "$_MS_COLOR" == true ]] && [[ "$_MS_LOGGER_FILE" != true ]]; then
-    printf "[${2}%-5s${__MS_COLOR_RESET}]: ${5}%-23s${__MS_COLOR_RESET} %s${__MS_COLOR_RESET}\n" "$1" "$3" "$4"
+    printf "[${level_color}%-5s${__MS_COLOR_RESET}]: ${message_color}%-23s${__MS_COLOR_RESET} %s${__MS_COLOR_RESET}\n" \
+      "$level" "$title" "$message"
   else
     if [[ "$_MS_LOGGER_FILE" == "true" ]]; then
-      printf "[%-5s]: %-18s %s\n" "$1" "$3" "$4" >>"$__MSLOG_OUTPUT"
+      printf "[%-5s]: %-18s %s\n" "$level" "$title" "$message" >>"$__MSLOG_OUTPUT"
     else
-      printf "[%-5s]: %-18s %s\n" "$1" "$3" "$4"
+      printf "[%-5s]: %-18s %s\n" "$level" "$title" "$message"
     fi
   fi
 }

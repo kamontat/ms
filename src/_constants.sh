@@ -11,12 +11,16 @@
 export _MS_DRYRUN=true
 
 export _MS_STEPS=(
-  # "template/default"
+  \
   "mac/brew"
+  \
   "mac/power"
   "mac/keyboard"
   "mac/trackpad"
+  \
   "app/intellij"
+  "app/git"
+  "app/ssh"
 )
 
 # true  = output will colorize everythings
@@ -25,9 +29,13 @@ export _MS_COLOR=true
 
 # true  = log to file
 # false = log to console
-export _MS_LOGGER_FILE=true
+export _MS_LOGGER_FILE=false
 
 export _MS_LOGGER_LEVEL=("debug" "info" "warn" "error") # "debug" "info" "warn" "error"
+export _MS_LOGGER_IGNORED_NAMESPACES=(
+  "utils/settings"
+  "utils/controller"
+)
 
 export __MS_COLOR_HIGHLIGHT="\e[36m"
 export __MS_COLOR_DEBUG=""
