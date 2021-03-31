@@ -81,7 +81,6 @@ app_expose() {
       cmd defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerVertSwipeGesture -int 2
     fi
   fi
-  echo "$1"
 }
 __ms_controller app_expose \
   "app-expose/enabled" is_boolean "" \
