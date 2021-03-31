@@ -21,7 +21,7 @@ install_homebrew() {
     cmd brew upgrade && cmd brew update
     return 0
   elif [[ "$1" != 'none' ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
+    cmd_title "/bin/bash -c <brew/install.sh>" /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
       cmd brew analytics off
   else
     __ms_warn "$MODULE_NAME" "skipping homebrew installation"
