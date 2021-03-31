@@ -23,16 +23,18 @@ __ms_setup_sudoer
 # should not have any log before this starting
 __ms_info "index" "initial... ($(date "+%Y-%m-%d %H:%M:%S"))"
 
-__ms_stp_new "template" "default"
+__ms_stp_new "mac" "brew"
 
-__ms_stp_new "mac" "power" "brew"
-__ms_stp_new "mac" "keyboard"
-__ms_stp_new "mac" "mouse"
-__ms_stp_new "mac" "trackpad"
+__ms_stp_new "mac" \
+  "power" \
+  "keyboard" \
+  "mouse" \
+  "trackpad"
 
-__ms_stp_new "app" "intellij"
-__ms_stp_new "app" "git"
-__ms_stp_new "app" "ssh"
+__ms_stp_new "app" \
+  "intellij" \
+  "git" \
+  "ssh"
 
 __ms_info "index" "done...    ($(date "+%Y-%m-%d %H:%M:%S"))"
 

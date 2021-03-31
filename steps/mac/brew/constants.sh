@@ -15,13 +15,13 @@
 export MODULE_KEY="brew"
 export MODULE_REQUIREMENT=("network" "mac")
 
-## install - install only if not exist
-## auto    - install if not exist, upgrade if exist
-## none    - ignore brew command
-# export __MS_SETTINGS__BREW_MODE="install"
+# install - install only if not exist
+# auto    - install if not exist, upgrade if exist
+# none    - ignore brew command
+export __MS_SETTINGS__BREW_MODE="install"
 
-## enabled mac app store on cli
-# export __MS_SETTINGS__BREW_MAS_ENABLED=true
+# enabled mac app store on cli
+export __MS_SETTINGS__BREW_MAS_ENABLED=true
 
-## filename on assets for load bundle, empty string will be ignored
-# export __MS_SETTINGS__BREW_BREWFILE="Brewfile"
+# filename on assets for load bundle, empty string will be ignored
+export __MS_SETTINGS__BREW_BREWFILE="Brewfile"
