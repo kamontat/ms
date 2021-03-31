@@ -17,51 +17,42 @@ __MS__INSTRUCTIONS=()
 __ms_requirement() {
   local is_failed=false
   for i in "$@"; do
-    if is_true is_failed; then
-      break
-    fi
-
     if [[ "$i" == "network" ]]; then
       if ! has_internet; then
-        __ms_warn "$MODULE_NAME" "requirement failed (network)"
-
         is_failed=true
-        export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
       fi
     elif [[ "$i" == "bash" ]]; then
       if ! [[ "$SHELL" =~ "bash" ]]; then
-        __ms_warn "$MODULE_NAME" "requirement failed (bash)"
-
-        # shellcheck disable=SC2034
         is_failed=true
-        export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
       fi
     elif [[ "$i" == "zsh" ]]; then
       if ! [[ "$SHELL" =~ "zsh" ]]; then
-        __ms_warn "$MODULE_NAME" "requirement failed (zsh)"
-
-        # shellcheck disable=SC2034
         is_failed=true
-        export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
       fi
     elif [[ "$i" == "mac" ]]; then
       if ! is_mac; then
-        __ms_warn "$MODULE_NAME" "requirement failed (macos)"
-
-        # shellcheck disable=SC2034
         is_failed=true
-        export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
       fi
     elif [[ "$i" == "linux" ]]; then
       if ! is_linux; then
-        __ms_warn "$MODULE_NAME" "requirement failed (linux)"
-
-        # shellcheck disable=SC2034
         is_failed=true
-        export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
+      fi
+    elif [[ "$i" =~ command: ]]; then
+      cmd_name="${i##*:}"
+      if ! is_command "$cmd_name"; then
+        is_failed=true
       fi
     fi
+
+    if is_true $is_failed; then
+      __ms_warn "$MODULE_NAME" "requirement failed ($i)"
+      break
+    fi
   done
+
+  if is_true $is_failed; then
+    export __MS__REQUIREMENT_FAILED+=("$MODULE_NAME")
+  fi
 }
 
 __ms_controller_instruction() {
