@@ -13,6 +13,7 @@
 #   - MODULE_NAME - <module>/<name> (e.g. template/default)
 
 export MODULE_KEY="def"
-export MODULE_REQUIREMENT=() # network, bash, zsh
+export MODULE_REQUIREMENT=() # @see __ms_requirement (_controllers.sh)
 
+# __MS_SETTINGS__<MODULE_KEY>_<SETTINGS_PATH>
 export __MS_SETTINGS__DEF_DATA_ENABLED=f
