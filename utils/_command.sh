@@ -20,6 +20,18 @@ sudo_cmd() {
 }
 export -f sudo_cmd
 
+cmd_title() {
+  local title="$1" command="$2"
+  shift 2
+  local args=("$@")
+
+  __ms_debug "$__MS__UTILS_CMD" "$ $title"
+  if ! is_true "$_MS_DRYRUN"; then
+    "${command}" "${args[@]}"
+  fi
+}
+export -f cmd_title
+
 cmd() {
   local command="$1"
   shift

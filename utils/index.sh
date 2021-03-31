@@ -13,7 +13,6 @@ source "${__MS_LIB}/_source.sh" || exit 2
 
 __ms_load_file "${__MS_ROOT}" ".env"
 
-__ms_load_file "${__MS_LIB}" "_security.sh"
 __ms_load_file "${__MS_LIB}" "_steps.sh"
 __ms_load_file "${__MS_LIB}" "_settings.sh"
 __ms_load_file "${__MS_LIB}" "_validate.sh"
@@ -21,3 +20,6 @@ __ms_load_file "${__MS_LIB}" "_controllers.sh"
 __ms_load_file "${__MS_LIB}" "_assets.sh"
 __ms_load_file "${__MS_LIB}" "_command.sh"
 __ms_load_file "${__MS_LIB}" "_env.sh"
+
+__ms_load_file "${__MS_LIB}" "_security.sh"
+__ms_load_file "${__MS_LIB}" "_encryption.sh"

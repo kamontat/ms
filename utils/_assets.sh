@@ -19,3 +19,17 @@ __ms_assets() {
   fi
 }
 export -f __ms_assets
+
+__ms_assets_path() {
+  local module="$MODULE_NAME"
+  echo "${__MS_STP}/${module}/assets"
+}
+export -f __ms_assets_path
+
+__ms_assets_mv() {
+  local current="$1" next_path="$2" current_path
+  current_path="$(__ms_assets_path)/${current}"
+
+  mv "$current_path" "$next_path"
+}
+export -f __ms_assets_mv
