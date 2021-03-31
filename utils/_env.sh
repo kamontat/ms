@@ -8,6 +8,8 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
+__MS__UTILS_ENV="utils/env"
+
 __ms_setup_env() {
   local key value
   for i in "$@"; do
@@ -15,6 +17,7 @@ __ms_setup_env() {
     value="${i##*=}"
 
     eval "$key='$value'"
+    __ms_debug "\$$__MS__UTILS_ENV" "$key = '$value'"
   done
 }
 export -f __ms_setup_env
