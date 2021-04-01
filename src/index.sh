@@ -24,6 +24,7 @@ __ms_setup_sudoer
 __ms_info "index" "initial... ($(date "+%Y-%m-%d %H:%M:%S"))"
 
 __ms_stp_new "mac" "brew"
+__ms_stp_wait
 
 __ms_stp_new "mac" \
   "power" \
@@ -34,7 +35,9 @@ __ms_stp_new "mac" \
 __ms_stp_new "app" \
   "intellij" \
   "git" \
-  "ssh"
+  "ssh" \
+  "setapp" \
+  "istat"
 
 __ms_info "index" "done...    ($(date "+%Y-%m-%d %H:%M:%S"))"
 

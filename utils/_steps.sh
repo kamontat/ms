@@ -20,7 +20,7 @@ __ms__stp_new() {
   local module="$1" name="$2"
 
   if __ms_stp_validate "$module" "$name"; then
-    __ms_info "$__MS__UTILS_STEPS" "starting.. $module ($name)"
+    __ms_debug "$__MS__UTILS_STEPS" "starting.. $module ($name)"
 
     export MODULE_NAME="${module}/${name}"
 
@@ -33,7 +33,7 @@ __ms__stp_new() {
 
     unset MODULE_NAME MODULE_KEY __MS__REQUIREMENT_FAILED
     if is_command "cleanup"; then
-      __ms_info "$__MS__UTILS_STEPS" "cleaning.. $module ($name)"
+      __ms_debug "$__MS__UTILS_STEPS" "cleaning.. $module ($name)"
       cleanup
 
       unset cleanup
@@ -54,3 +54,16 @@ __ms_stp_new() {
   done
 }
 export -f __ms_stp_new
+
+__ms_stp_wait() {
+  echo
+  printf "Waiting user input [Y|n]"
+  read -rn 1 ans
+  echo
+  echo
+
+  if [[ $ans != "y" ]] && [[ $ans != "Y" ]]; then
+    __ms_info "$__MS__UTILS_STEPS" "[STOP] I will not continue setup ($ans) thank you."
+    exit 0
+  fi
+}
