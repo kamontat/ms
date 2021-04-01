@@ -16,13 +16,21 @@
 #   - __ms_controller <callback> [<setting_path>, <validator>, <default>]...
 #   - __ms_assets <filename.ext> - return fullpath of asset
 
+_install_homebrew() {
+  cmd_title "/bin/bash -c <brew/install.sh>" /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
+    cmd brew analytics off
+}
+
+_upgrade_homebrew() {
+  cmd brew upgrade && cmd brew update
+}
+
 install_homebrew() {
-  if [[ "$1" == "auto" ]] && is_command "brew"; then
-    cmd brew upgrade && cmd brew update
-    return 0
-  elif [[ "$1" != 'none' ]]; then
-    cmd_title "/bin/bash -c <brew/install.sh>" /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
-      cmd brew analytics off
+  local mode="$1"
+  if is_match "$mode" "auto" "install" && ! is_command "brew"; then
+    _install_homebrew
+  elif is_match "$mode" "auto" && is_command "brew"; then
+    _upgrade_homebrew
   else
     __ms_warn "$MODULE_NAME" "skipping homebrew installation"
   fi
