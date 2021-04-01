@@ -8,11 +8,11 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
-is_number_string() {
-  is_valid "$1" "three" "two" "one" "four"
+is_mode() {
+  is_valid "$1" "auto" "download" "none"
 }
-export -f is_number_string
+export -f is_mode
 
 cleanup() {
-  unset is_number_string
+  unset is_mode
 }

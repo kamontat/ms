@@ -21,6 +21,8 @@ export _MS_STEPS=(
   "app/intellij"
   "app/git"
   "app/ssh"
+  "app/setapp"
+  "app/istat"
 )
 
 # true  = output will colorize everythings
@@ -35,6 +37,7 @@ export _MS_LOGGER_LEVEL=("debug" "info" "warn" "error") # "debug" "info" "warn" 
 export _MS_LOGGER_IGNORED_NAMESPACES=(
   "utils/settings"
   "utils/controller"
+  "utils/source"
 )
 
 export __MS_COLOR_HIGHLIGHT="\e[36m"
