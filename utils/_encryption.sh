@@ -57,6 +57,11 @@ __ms_decrypt_file() {
   local fpath_raw="$2" # this is file name with extension
   local fpath_encrypted="${fpath_raw}.gpg"
 
+  # skip if file is exist
+  if test -f "$fpath_raw"; then
+    return 0
+  fi
+
   gpg --decrypt --output "$fpath_raw" "$fpath_encrypted"
 
   cd "$__ms_old_location" || return 1
