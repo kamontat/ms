@@ -29,8 +29,8 @@ moving_ssh_data() {
     fi
   fi
 
-  __ms_decrypt_directory "$(__ms_assets_path)" ".ssh"
-  __ms_assets_mv ".ssh" "$folder_path"
+  cmd __ms_decrypt_directory "$(__ms_assets_path)" ".ssh"
+  cmd __ms_assets_mv ".ssh" "$folder_path"
 }
 
 __ms_controller moving_ssh_data \

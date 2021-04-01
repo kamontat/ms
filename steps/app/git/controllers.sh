@@ -22,15 +22,15 @@ moving_gitconfig() {
 
   if test -f "$file_path"; then
     if is_true "$overrided"; then
-      mv "$file_path" "${file_path}${tmp}"
+      cmd mv "$file_path" "${file_path}${tmp}"
     else
       __ms_info "$MODULE_NAME" "stop because gitconfig is exist"
       return 0
     fi
   fi
 
-  __ms_decrypt_file "$(__ms_assets_path)" ".gitconfig"
-  __ms_assets_mv ".gitconfig" "$file_path"
+  cmd __ms_decrypt_file "$(__ms_assets_path)" ".gitconfig"
+  cmd __ms_assets_mv ".gitconfig" "$file_path"
 }
 
 __ms_controller moving_gitconfig \
