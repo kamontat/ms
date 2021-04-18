@@ -16,9 +16,9 @@ export MODULE_KEY="KB"
 export MODULE_REQUIREMENT=("mac")
 
 ## You have to choose between 2 behavior, when user press and hold the keys (more information https://www.howtogeek.com/267463/how-to-enable-key-repeating-in-macos)
-## true  = Repeat key
-## false = Special character
-export __MS_SETTINGS__KB_REPEAT_ENABLED=true
+## true  = Special character
+## false = Repeat key
+export __MS_SETTINGS__KB_ACCENTED_CHARACTER_ENABLED=false
 
 ## keyboard repeat rate
 ## [1] = 15ms
