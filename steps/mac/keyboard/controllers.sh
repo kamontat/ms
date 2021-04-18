@@ -16,13 +16,13 @@
 #   - __ms_controller <callback> [<setting_path>, <validator>, <default>]...
 #   - __ms_assets <filename.ext> - return fullpath of asset
 
-enabling_repeat_key() {
+enabling_accented_characters() {
   if is_boolean "$1"; then
     defaults write -g ApplePressAndHoldEnabled -bool "$1"
   fi
 }
-__ms_controller enabling_repeat_key \
-  "repeat/enabled" is_boolean ""
+__ms_controller enabling_accented_characters \
+  "accented-character/enabled" is_boolean ""
 
 repeat_key_rate() {
   if is_integer "$1"; then
